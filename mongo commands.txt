@@ -6,7 +6,7 @@ use <databasename>
 show dbs
 db,createCollection("")
 db
-
+#####
 show collections
 db,createCollection("name of the collection")
 db.createcollection('cappedcollection',{capped:true,size:256,max:5})--allows max of 5 documents
