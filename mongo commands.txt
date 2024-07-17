@@ -1,0 +1,139 @@
+db.version()
+show dbs()
+mongo --host_____ --port _________ 
+
+use <databasename>
+show dbs
+db,createCollection("")
+db
+
+show collections
+db,createCollection("name of the collection")
+db.createcollection('cappedcollection',{capped:true,size:256,max:5})--allows max of 5 documents
+db.<collectionname>.createIndex()
+db.collection.getIndexes()
+mongodb gives name of the index as fieldname_1
+db.dropIndexes("Indexname")
+netstat -ntpl
+
+db.collectionanme.dropIndexes()
+
+db.collectioname.insertOne({age: 30,Name:[{Harini: "Good", Samyu: "Very Good"}]})
+
+CRUD:
+
+Create(rows=documents,insert)
+READ
+UPDATE:
+DELETE:
+
+Insert:
+
+db.insert({name: "Harini"})
+db.insertOne({name: "Harini"})
+db.insertMany({name: "Harini", Age: 30
+
+
+mongod --auth
+
+mongo -u <username> -p <password> -authenticationDatabase <databasename>
+$mongo
+use <databasename>
+db.auth("<username>","<password>")
+
+Harini
+Radha@6666
+
+
+db.CreateUser({user:"<username>",pwd:<"password">, roles:[{role: "<roleName>",db: "<admin>"}]})
+direct privilages cant be given to the user, first role has to be created and the privalages has to be added to the role and role is assigned to the user 
+db.runCommand({connectionStatus:1})
+
+
+Built-In-Roles
+read 
+Readwrite
+dbowner
+dbAdmin
+userAdmin--allows to create users/drop user/ create role/drop role/grant role/revoke role/ viewrole/viewuser/setauthenticationrestriction
+clusterAdmin--
+clustermanager: provides management and monitoring actions on the cluster. A user with this role can access local and config databases which are used in sharding and replication 
+clustermontor: Provides read only access to the monitoring tools 
+hotManager: provides ability to manager and monitor servers
+clusterAdmin: Greatest cluster role.All roles combined 
+Backup role:
+restore role:
+ANydatabaseroles: Provide access to all users excepy local and config
+
+readAnydatabase:
+readwriteAnydatabase:
+userAdminanydatabbase:
+dbadminAnydatabase:
+
+Super roles:
+root
+
+UserdefinedRoles:
+db.createRole({role: "<rolename>", privileges:[],roles:[{role:"<type of role/readwrite>",db:"admin,<databasename>"}]})
+
+updaterole will update all roles of the user with the new roles
+db.revokeroles
+
+
+use admin
+db.createRole(
+   {
+     role: "testrole_P",
+     privileges: [
+       
+       { resource: { db: "test", collection: "movies" }, actions: [ "find", "update", "insert", "remove" ] },
+      
+     ]}),
+     roles: [
+       { role: "read", db: "admin" }
+     ]
+   },
+   { w: "majority" , wtimeout: 5000 }
+)
+
+db.changeUserPassword("username", passwordPrompt())
+
+systemctl start mongod
+netstat -ntpl
+ps --eaf | grep mongod
+
+ifconfig
+pwd--print current working directory
+
+sudo stands for "superuser do"
+
+chmod 400 <path-to-the-file>
+
+chmod command is used to change the permission of a file or directory. 
+Ownership
+Every file is owned by a specific user and a specific group in Linux. In this course the files will be mostly owned by the root user.
+
+Ownership can be changed using the chown command.
+
+Chown command is used for changing the user/group ownership of a file/directory.
+
+ COPY
+chown [new owner]:[group] <file name>
+If you need to change ownership of a file or directory, you may need to use sudo if the directory is owned by root. For example, this command will change the ownership of the /var/mongodb_directory to myuser.
+
+ COPY
+sudo chown myuser:myuser /var/mongodb_directory
+
+mkdir -p /db/mongodb_data/---creats parent directory if not exists
+
+sudo mkdir -p /var/data---creates a directory owned by root 
+rm ---removes files and directories
+cat ---to view the file
+ps -ef !grep mongod
+kill pid 
+rs.isMaster()
+rs.stepDown()
+rs.add()
+
+
+	

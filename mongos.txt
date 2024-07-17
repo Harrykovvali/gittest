@@ -1,0 +1,80 @@
+22-02-2022
+9-4-2022
+
+mongo "mongodb+srv://sandbox.b0f2v.mongodb.net/myFirstDatabase" --username m001-student
+
+mongo "mongodb+srv://sandbox.b0f2v.mongodb.net/myFirstDatabase" --username m001-student
+m001-mongodb-basics
+
+{
+ "_id": ObjectId("5ec414e5e722bb1f65a25451"),
+ "pet": "wolf",
+ "domestic?": false,
+ "diet": "carnivorous",
+ "climate": ["polar", "equatorial", "continental", "mountain"]
+}
+
+db.pets.updateMany({ "pet": "wolf" },
+                   { "$push": { "climate": "continental",
+                                "look": "adorable" } })
+
+db.test.updateMany({ "pet": "wolf" },
+                   { "$set": { "type": "dangerous",
+                               "look": "adorable" }})
+
+db.test.updateMany({ "pet": "wolf" },
+                   { "$set": { "climate": "continental" }})
+
+Date:"Feb 20 2015", or Date:"Feb 21 2015" and the company is not part of the "Cigarette Retail Dealer - 127" sector?
+
+$and:[{"$or":[{"date":"Feb 20 2015","date":"Feb 21 2015"}}],{"$ne":"Cigarette Retail Dealer - 127"}],
+
+db.inspections.find({ 
+"$and":[
+{
+"$or":[
+{"date":"Feb 20 2015"},
+{"date":"Feb 20 2015"}]},{"$ne":{"sector":"Cigarette Retail Dealer - 127"}}]})
+
+db.inspections.find(
+  { "$and": [
+      { "$or": [
+                 { "date": "Feb 20 2015" },
+                 { "date": "Feb 21 2015" } ] },
+      {"sector": { "$ne":"Cigarette Retail Dealer - 127" }}]
+  }).pretty
+
+
+
+db.zips.find({"$or":[{"pop":{"$gt":1000000}},{"pop":{"$lt":5000}}]})
+db.companies.find({"$or":[{"founded_year":2004},{"$or"}
+
+
+
+How many companies in the sample_training.companies dataset were
+
+either founded in 2004
+
+[and] either have the social category_code [or] web category_code,
+[or] were founded in the month of October
+
+[and] also either have the social category_code [or] web category_code?
+
+db.companies.find({"$or":[{{"founded_year":2004},"$or":[{"category_code":"social"},{"category_code":"web"}],{"founded_month":"october"}}])
+
+db.companies.find({"founded_year":2004},"$or":[{"category_code":"social"},{"category_code":"web"}])
+
+db.companies.find({"$or":[{"founded_year":2004,"$or":[{"category_code":"social"},{"category_code":"web"}]},{{"founded_month":1,"$or":[{"category_code":"social"},{"category_code":"web"}]}}]})
+
+
+
+db.listingsAndReviews.find({ "amenities": {
+                                  "$size": 20,
+                                  "$all": [ "Internet", "Wifi",  "Kitchen",
+                                           "Heating", "Family/kid friendly",
+                                           "Washer", "Dryer", "Essentials",
+                                           "Shampoo", "Hangers",
+                                           "Hair dryer", "Iron",
+                                           "Laptop friendly workspace" ]
+                                         }
+                            }).pretty()

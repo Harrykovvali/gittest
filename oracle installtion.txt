@@ -1,0 +1,72 @@
+cd /dsk/
+ls -ltr
+
+error while loading shared libraries: libnsl.so.1: cannot open shared object file: No such file or directory
+su -root
+df -h
+cd /home
+ls -ltr
+cd /run/media/harini_kovvali/OL-8-5-0-BaseOS-x86_64/
+ls -ltr
+
+BaseOS
+AppStream
+isolinux
+EFI 
+images
+
+
+cd BaseOS
+
+cd Packages
+ls -ltr
+cp -rv *.rpm /home/soft
+
+
+cd /etc/yum/repos.d/
+ls -ltr
+vi harini.repo ----check repo option
+
+inside soft folder which is created to copy rpm files 
+ls -ltr |grep drpm
+rpm -ivh drpm-0.4.1-3.x86_64.rpm
+rpm -ivh createrepo_c-libs
+rpm -ivh createrepo_C-0.17
+
+createrepo /home/soft
+yum clean all
+ yum repolist
+
+yum search libnsl 
+cd /etc/yum.repos.d
+ls -ltr
+mkdir bkp
+mv all files in yum.repos.d to bkp
+mv <all files> bkp
+yum search libnsl
+su -oracle 
+runInstaller
+
+groupadd oinstall---add oinstall group
+groupadd dba---add dba group 
+useradd -g oinstall -G dba oracle----add oracle user to groups oinstall and dba
+
+passwd oracle: changes the password of oracle user
+
+mdir -p /dsk1/app/oracle/product/21c/dbhome_1
+chown -R oracle:oinstall /dsk1
+chmod -R 775/dsk1
+su -oracle
+cd /home
+su -root 
+yum install sysstat
+yum install ksh 
+
+run all fix packages on root
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+M001: MongoDB Basics 29
+M103: Basic Cluster Administration 15
+M201: MongoDB Performance 10
+M310: MongoDB Security 9
+M312: Diagnostics & Debugging 7
