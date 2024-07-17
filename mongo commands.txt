@@ -21,7 +21,8 @@ db.collectionanme.dropIndexes()
 db.collectioname.insertOne({age: 30,Name:[{Harini: "Good", Samyu: "Very Good"}]})
 
 CRUD:
-
+#############################################################add
+#############################subs
 Create(rows=documents,insert)
 READ
 UPDATE:
